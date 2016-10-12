@@ -108,16 +108,6 @@ void setMat(int stuPair[], int len_stuPair, bool** mat, bool val)
 
 int count=0;
 
-/*void count_sub(int n, bool** student)
-{
-	if(!isMatEmpty(n,student))
-	{
-	}
-	else
-	{
-	}
-}*/
-
 int countParings(int n,bool** student)
 {
 	printMat(n,n,student);
@@ -149,6 +139,14 @@ int countParings(int n,bool** student)
 						new_mat[i][x_l]=false;
 					}
 					countParings(n,new_mat);
+
+					for(int x_new=0; x_new<n; x_new++)
+					{
+						for(int y_new=0; y_new<n; y_new++)
+						{
+							new_mat[y_new][x_new]=student[y_new][x_new];
+						}
+					}
 					//--------------------------------------
 					for(int k=0; k<n; k++)
 					{
